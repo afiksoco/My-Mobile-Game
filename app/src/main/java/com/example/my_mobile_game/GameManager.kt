@@ -46,7 +46,7 @@ class GameManager(private val lifeCount: Int = 3, private val cols: Int, private
             }
         }
 
-        // Clear the first row (set all to invisible)
+//         Clear the first row (set all to invisible)
         for (j in 0 until cols) {
             appleMatrix[0][j] = false
         }

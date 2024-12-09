@@ -7,5 +7,5 @@
     <dimen name="heart_margins">10dp</dimen>
     <dimen name="apple_height">95dp</dimen>
     <dimen name="apple_width">120dp</dimen>
-    <dimen name="negative_overlap_margin_logo_matrix">-50dp</dimen>
+    <dimen name="negative_overlap_margin_logo_matrix">0dp</dimen>
 </resources>

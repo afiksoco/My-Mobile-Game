@@ -105,42 +105,42 @@ class MainActivity : AppCompatActivity() {
                 findViewById(R.id.main_MAT_61),
                 findViewById(R.id.main_MAT_62)
             ),
-            arrayOf(
-                findViewById(R.id.main_MAT_70),
-                findViewById(R.id.main_MAT_71),
-                findViewById(R.id.main_MAT_72)
-            ),
-            arrayOf(
-                findViewById(R.id.main_MAT_80),
-                findViewById(R.id.main_MAT_81),
-                findViewById(R.id.main_MAT_82)
-            ),
-            arrayOf(
-                findViewById(R.id.main_MAT_90),
-                findViewById(R.id.main_MAT_91),
-                findViewById(R.id.main_MAT_92)
-            ),
-            arrayOf(
-                findViewById(R.id.main_MAT_100),
-                findViewById(R.id.main_MAT_101),
-                findViewById(R.id.main_MAT_102)
-            ),
-            arrayOf(
-                findViewById(R.id.main_MAT_110),
-                findViewById(R.id.main_MAT_111),
-                findViewById(R.id.main_MAT_112)
-            ),
-            arrayOf(
-                findViewById(R.id.main_MAT_120),
-                findViewById(R.id.main_MAT_121),
-                findViewById(R.id.main_MAT_122)
-            ),
-            arrayOf(
-                findViewById(R.id.main_MAT_130),
-                findViewById(R.id.main_MAT_131),
-                findViewById(R.id.main_MAT_132)
+//            arrayOf(
+//                findViewById(R.id.main_MAT_70),
+//                findViewById(R.id.main_MAT_71),
+//                findViewById(R.id.main_MAT_72)
+//            ),
+//            arrayOf(
+//                findViewById(R.id.main_MAT_80),
+//                findViewById(R.id.main_MAT_81),
+//                findViewById(R.id.main_MAT_82)
+//            ),
+//            arrayOf(
+//                findViewById(R.id.main_MAT_90),
+//                findViewById(R.id.main_MAT_91),
+//                findViewById(R.id.main_MAT_92)
+//            ),
+//            arrayOf(
+//                findViewById(R.id.main_MAT_100),
+//                findViewById(R.id.main_MAT_101),
+//                findViewById(R.id.main_MAT_102)
+//            ),
+//            arrayOf(
+//                findViewById(R.id.main_MAT_110),
+//                findViewById(R.id.main_MAT_111),
+//                findViewById(R.id.main_MAT_112)
+//            ),
+//            arrayOf(
+//                findViewById(R.id.main_MAT_120),
+//                findViewById(R.id.main_MAT_121),
+//                findViewById(R.id.main_MAT_122)
+//            ),
+//            arrayOf(
+//                findViewById(R.id.main_MAT_130),
+//                findViewById(R.id.main_MAT_131),
+//                findViewById(R.id.main_MAT_132)
             )
-        )
+
     }
 
     private fun initViews() {

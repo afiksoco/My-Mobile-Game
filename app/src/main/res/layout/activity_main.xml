@@ -115,7 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="110dp"
         android:orientation="horizontal"
         android:visibility="visible"
 
@@ -183,63 +183,6 @@
                 android:src="@drawable/apple_14"
                 android:visibility="invisible" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_70"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_80"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_90"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_100"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_110"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_120"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_130"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <!-- Second Column -->
@@ -297,62 +240,6 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_61"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_71"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_81"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_91"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_101"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_111"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_121"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_131"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
@@ -422,63 +309,6 @@
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:src="@drawable/apple_14"
                 android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_72"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_82"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_92"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_102"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_112"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_122"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_MAT_132"
-                android:layout_width="@dimen/apple_width"
-                android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible"
-                />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
