@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.my_mobile_game"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.my_mobile_game"
