@@ -16,7 +16,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="@dimen/default_margin"
-        android:layout_marginTop="@dimen/default_margin">
+        android:layout_marginTop="25dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_heart1"
@@ -115,7 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="120dp"
         android:orientation="horizontal"
         android:visibility="visible"
 
@@ -125,12 +125,11 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_00"
-                android:layout_width="@dimen/apple_width"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/apple_height"
                 android:src="@drawable/apple_14"
                 android:visibility="invisible" />
@@ -139,7 +138,6 @@
                 android:id="@+id/main_MAT_10"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:src="@drawable/apple_14"
                 android:visibility="invisible" />
 
@@ -147,7 +145,6 @@
                 android:id="@+id/main_MAT_20"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:src="@drawable/apple_14"
                 android:visibility="invisible" />
 
@@ -155,7 +152,6 @@
                 android:id="@+id/main_MAT_30"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:src="@drawable/apple_14"
                 android:visibility="invisible" />
 

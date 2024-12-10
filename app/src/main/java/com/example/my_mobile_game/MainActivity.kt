@@ -3,6 +3,7 @@ package com.example.my_mobile_game
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -41,10 +42,13 @@ class MainActivity : AppCompatActivity() {
             //reschedule:
             handler.postDelayed(this, Constants.DELAY)
             //refresh UI:
-            gameManager.spawnApple()
             gameManager.moveLogosDown()
-            updateAppleUI()
+            gameManager.spawnApple()
 
+            updateAppleUI()
+            if (gameManager.isCollision()) {
+                gameManager.handleCollision()
+            }
         }
     }
 
@@ -139,7 +143,7 @@ class MainActivity : AppCompatActivity() {
 //                findViewById(R.id.main_MAT_130),
 //                findViewById(R.id.main_MAT_131),
 //                findViewById(R.id.main_MAT_132)
-            )
+        )
 
     }
 
