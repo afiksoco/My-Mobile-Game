@@ -10,7 +10,12 @@ class GameManager(private val lifeCount: Int = 3, private val cols: Int, private
 
     private var currentCharPosition = Constants.STARTING_POS
     private val appleMatrix: Array<Array<Boolean>> = Array(rows) { Array(cols) { false } }
-    private var failureCount: Int = 0
+
+    var failureCount: Int = 0
+        private set
+
+    val isGameOver: Boolean
+        get() = failureCount == lifeCount
 
     fun moveLeft() {
         if (currentCharPosition > 0) {
@@ -18,14 +23,12 @@ class GameManager(private val lifeCount: Int = 3, private val cols: Int, private
             if (isCollision()) {
                 handleCollision()
             }
-
         }
     }
 
     fun moveRight() {
         if (currentCharPosition < cols - 1) {
             currentCharPosition++
-
             if (isCollision()) {
                 handleCollision()
             }
@@ -35,6 +38,7 @@ class GameManager(private val lifeCount: Int = 3, private val cols: Int, private
     fun getCurrentPosition(): Int {
         return currentCharPosition
     }
+
 
     // Returns the current visibility state of the apple at a specific position
     fun isAppleVisible(row: Int, col: Int): Boolean {
@@ -86,7 +90,6 @@ class GameManager(private val lifeCount: Int = 3, private val cols: Int, private
         failureCount++
 
     }
-
 
 
 }

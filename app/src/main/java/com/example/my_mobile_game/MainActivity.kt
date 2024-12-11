@@ -42,15 +42,20 @@ class MainActivity : AppCompatActivity() {
             //reschedule:
             handler.postDelayed(this, Constants.DELAY)
             //refresh UI:
-            gameManager.moveLogosDown()
-            gameManager.spawnApple()
-
-            updateAppleUI()
-            if (gameManager.isCollision()) {
-                gameManager.handleCollision()
+            if (gameManager.isGameOver) {
+                Log.d("gameover","game over")
+            }
+            else {
+                gameManager.moveLogosDown()
+                gameManager.spawnApple()
+                updateAppleUI()
+                if (gameManager.isCollision())
+                    gameManager.handleCollision()
+                updateHeartsUI()
             }
         }
     }
+
 
     private fun startGame() {
         if (!gameStarted) {
@@ -151,10 +156,12 @@ class MainActivity : AppCompatActivity() {
         main_FAB_leftarrow.setOnClickListener {
             gameManager.moveLeft()
             updateCharUI()
+            updateHeartsUI()
         }
         main_FAB_rightarrow.setOnClickListener {
             gameManager.moveRight()
             updateCharUI()
+            updateHeartsUI()
         }
     }
 
@@ -171,6 +178,13 @@ class MainActivity : AppCompatActivity() {
                 main_IMG_apple[i][j].visibility =
                     if (gameManager.isAppleVisible(i, j)) View.VISIBLE else View.INVISIBLE
             }
+        }
+    }
+
+    private fun updateHeartsUI() {
+        if (gameManager.failureCount != 0) {
+            main_IMG_hearts[main_IMG_hearts.size - gameManager.failureCount].visibility =
+                View.INVISIBLE
         }
     }
 
