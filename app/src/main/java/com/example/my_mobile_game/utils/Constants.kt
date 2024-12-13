@@ -1,7 +1,15 @@
 package com.example.my_mobile_game.utils
 
-object Constants {
+import com.google.android.material.color.utilities.Score
 
-    const val DELAY: Long = 1000L
-    const val STARTING_POS: Int = 1
+class Constants {
+    object GameLogic {
+        const val DELAY: Long = 700L
+        const val STARTING_POS: Int = 1
+        const val POINTS_PER_SECOND: Int = 1
+    }
+
+    object BundleKeys {
+        const val SCORE_KEY = "SCORE_KEY"
+    }
 }

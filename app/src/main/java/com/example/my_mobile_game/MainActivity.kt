@@ -1,17 +1,17 @@
 package com.example.my_mobile_game
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.my_mobile_game.logic.GameManager
 import com.example.my_mobile_game.utils.Constants
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+import com.google.android.material.textview.MaterialTextView
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var main_IMG_hearts: Array<AppCompatImageView>
     private lateinit var main_IMG_char: Array<AppCompatImageView>
     private lateinit var main_IMG_apple: Array<Array<AppCompatImageView>>
+    private lateinit var main_LBL_score: MaterialTextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,17 +36,24 @@ class MainActivity : AppCompatActivity() {
 
 
     val handler: Handler = Handler(Looper.getMainLooper())
+
     private var gameStarted: Boolean = false
+
+    private var gameOverHandled = false
 
     val runnable: Runnable = object : Runnable {
         override fun run() {
             //reschedule:
-            handler.postDelayed(this, Constants.DELAY)
+            handler.postDelayed(this, Constants.GameLogic.DELAY)
             //refresh UI:
             if (gameManager.isGameOver) {
-                Log.d("gameover","game over")
-            }
-            else {
+                if (!gameOverHandled) {
+                    gameOverHandled = true // Ensure activity change happens only once
+                    changeActivity(gameManager.score)
+                }
+            } else {
+                gameManager.score += Constants.GameLogic.POINTS_PER_SECOND
+                updateScoreUI()
                 gameManager.moveLogosDown()
                 gameManager.spawnApple()
                 updateAppleUI()
@@ -59,7 +67,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun startGame() {
         if (!gameStarted) {
-            handler.postDelayed(runnable, Constants.DELAY)
+            handler.postDelayed(runnable, Constants.GameLogic.DELAY)
             gameStarted = true;
 
         }
@@ -68,6 +76,7 @@ class MainActivity : AppCompatActivity() {
     private fun findViews() {
         main_FAB_rightarrow = findViewById(R.id.main_FAB_rightarrow)
         main_FAB_leftarrow = findViewById(R.id.main_FAB_leftarrow)
+        main_LBL_score = findViewById(R.id.main_LBL_score)
         main_IMG_hearts = arrayOf(
             findViewById(R.id.main_IMG_heart1),
             findViewById(R.id.main_IMG_heart2),
@@ -114,45 +123,15 @@ class MainActivity : AppCompatActivity() {
                 findViewById(R.id.main_MAT_61),
                 findViewById(R.id.main_MAT_62)
             ),
-//            arrayOf(
-//                findViewById(R.id.main_MAT_70),
-//                findViewById(R.id.main_MAT_71),
-//                findViewById(R.id.main_MAT_72)
-//            ),
-//            arrayOf(
-//                findViewById(R.id.main_MAT_80),
-//                findViewById(R.id.main_MAT_81),
-//                findViewById(R.id.main_MAT_82)
-//            ),
-//            arrayOf(
-//                findViewById(R.id.main_MAT_90),
-//                findViewById(R.id.main_MAT_91),
-//                findViewById(R.id.main_MAT_92)
-//            ),
-//            arrayOf(
-//                findViewById(R.id.main_MAT_100),
-//                findViewById(R.id.main_MAT_101),
-//                findViewById(R.id.main_MAT_102)
-//            ),
-//            arrayOf(
-//                findViewById(R.id.main_MAT_110),
-//                findViewById(R.id.main_MAT_111),
-//                findViewById(R.id.main_MAT_112)
-//            ),
-//            arrayOf(
-//                findViewById(R.id.main_MAT_120),
-//                findViewById(R.id.main_MAT_121),
-//                findViewById(R.id.main_MAT_122)
-//            ),
-//            arrayOf(
-//                findViewById(R.id.main_MAT_130),
-//                findViewById(R.id.main_MAT_131),
-//                findViewById(R.id.main_MAT_132)
-        )
+
+            )
 
     }
 
     private fun initViews() {
+
+        main_LBL_score.text = "${gameManager.score}"
+
         main_FAB_leftarrow.setOnClickListener {
             gameManager.moveLeft()
             updateCharUI()
@@ -186,6 +165,20 @@ class MainActivity : AppCompatActivity() {
             main_IMG_hearts[main_IMG_hearts.size - gameManager.failureCount].visibility =
                 View.INVISIBLE
         }
+    }
+
+    private fun updateScoreUI() {
+        main_LBL_score.text = "${gameManager.score}"
+    }
+
+
+    private fun changeActivity(score: Int) {
+        val intent = Intent(this, ScoreActivity::class.java)
+        var bundle = Bundle()
+        bundle.putInt(Constants.BundleKeys.SCORE_KEY, score)
+        intent.putExtras(bundle)
+        startActivity(intent)
+        finish()
     }
 
 }

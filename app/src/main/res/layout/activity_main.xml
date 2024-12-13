@@ -8,6 +8,18 @@
     android:background="@color/sky_blue"
     tools:context=".MainActivity">
 
+    <!--    Score!-->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_LBL_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="19dp"
+        android:layout_marginRight="@dimen/default_margin"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        tools:text="000" />
 
     <!--hearts!-->
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -16,7 +28,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="@dimen/default_margin"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="@dimen/default_top_margin">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_heart1"
