@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/sky_blue"
+    android:background="@color/ugly_purple"
     tools:context=".MainActivity">
 
     <!--    Score!-->
@@ -141,30 +141,34 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_00"
-                android:layout_width="match_parent"
+                android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_10"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_20"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_30"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -172,7 +176,8 @@
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -180,7 +185,8 @@
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -188,7 +194,8 @@
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -203,23 +210,27 @@
                 android:id="@+id/main_MAT_01"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
+                android:src="@drawable/orange_apple"
+                android:visibility="invisible"
+                android:scaleType="centerCrop"/>
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_11"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
-                android:visibility="invisible" />
+
+                android:src="@drawable/orange_apple"
+                android:visibility="invisible"
+                android:scaleType="centerCrop"/>
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_21"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
+                android:scaleType="centerCrop"
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -227,7 +238,8 @@
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -235,7 +247,8 @@
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -243,7 +256,8 @@
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -251,7 +265,8 @@
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
 
@@ -267,7 +282,8 @@
                 android:id="@+id/main_MAT_02"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -275,7 +291,8 @@
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -283,7 +300,9 @@
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -291,7 +310,8 @@
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -299,7 +319,8 @@
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -307,7 +328,8 @@
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -315,7 +337,8 @@
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
-                android:src="@drawable/apple_14"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 

@@ -1,10 +1,11 @@
 package com.example.my_mobile_game.logic
 
-import android.util.Log
 import com.example.my_mobile_game.utils.Constants
+import com.example.my_mobile_game.utils.SignalManager
 import kotlin.random.Random
 
 class GameManager(private val lifeCount: Int = 3, private val cols: Int, private val rows: Int) {
+
 
     private var currentCharPosition = Constants.GameLogic.STARTING_POS
     private val appleMatrix: Array<Array<Boolean>> = Array(rows) { Array(cols) { false } }
@@ -48,10 +49,6 @@ class GameManager(private val lifeCount: Int = 3, private val cols: Int, private
         return appleMatrix[row][col]
     }
 
-    // Sets the visibility of an apple at a specific position
-    fun setAppleVisibility(row: Int, col: Int, isVisible: Boolean) {
-        appleMatrix[row][col] = isVisible
-    }
 
     // Logic to move the logos down by one row
     fun moveLogosDown() {
@@ -67,15 +64,9 @@ class GameManager(private val lifeCount: Int = 3, private val cols: Int, private
         for (j in 0 until cols) {
             appleMatrix[0][j] = false
         }
-//        logAppleMatrix()
     }
 
-    fun logAppleMatrix() {
-        Log.d("AppleMatrix", "Current Apple Matrix:")
-        appleMatrix.forEachIndexed { rowIndex, row ->
-            Log.d("AppleMatrix", "Row $rowIndex: ${row.joinToString { if (it) "1" else "0" }}")
-        }
-    }
+
 
     fun spawnApple() {
         if (consecutiveSpawns < 2) { // Allow spawning only if less than 2 consecutive spawns
@@ -89,17 +80,14 @@ class GameManager(private val lifeCount: Int = 3, private val cols: Int, private
     }
 
 
-//    fun checkSp
-
     fun isCollision(): Boolean {
         return appleMatrix[appleMatrix.size - 1][currentCharPosition]
     }
 
     fun handleCollision() {
-        Log.d("AppleMatrix", "Last row: ${appleMatrix[appleMatrix.size - 1].joinToString()}")
-        Log.d("A", "collision!")
         failureCount++
-
+        SignalManager.getInstance().toast("Tom met an apple user!")
+        SignalManager.getInstance().vibrate()
     }
 
 
