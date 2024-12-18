@@ -17,7 +17,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="19dp"
         android:layout_marginRight="@dimen/default_margin"
-        android:textSize="35sp"
+        android:textSize="@dimen/default_text_size"
         android:textStyle="bold"
         tools:text="000" />
 
@@ -57,8 +57,8 @@
     <!--arrows!-->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/main_FAB_leftarrow"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/default_arrows_size"
+        android:layout_height="@dimen/default_arrows_size"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="@dimen/default_margin"
         android:layout_marginBottom="@dimen/default_margin"
@@ -72,8 +72,8 @@
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/main_FAB_rightarrow"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/default_arrows_size"
+        android:layout_height="@dimen/default_arrows_size"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginRight="@dimen/default_margin"
@@ -92,20 +92,20 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="80dp">
+        android:layout_marginBottom="@dimen/char_default_margin">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_tomco1"
-            android:layout_width="120dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/default_char_width"
+            android:layout_height="@dimen/default_char_height"
             android:layout_weight="1"
             android:src="@drawable/tomco_photo"
             android:visibility="invisible" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_tomco2"
-            android:layout_width="120dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/default_char_width"
+            android:layout_height="@dimen/default_char_height"
             android:layout_weight="1"
             android:src="@drawable/tomco_photo"
             android:visibility="visible" />
@@ -113,8 +113,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_tomco3"
-            android:layout_width="120dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/default_char_width"
+            android:layout_height="@dimen/default_char_height"
             android:layout_weight="1"
             android:src="@drawable/tomco_photo"
             android:visibility="invisible" />
@@ -175,7 +175,6 @@
                 android:id="@+id/main_MAT_40"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:scaleType="centerCrop"
                 android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
@@ -184,7 +183,6 @@
                 android:id="@+id/main_MAT_50"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:scaleType="centerCrop"
                 android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
@@ -193,7 +191,6 @@
                 android:id="@+id/main_MAT_60"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:scaleType="centerCrop"
                 android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
@@ -218,7 +215,6 @@
                 android:id="@+id/main_MAT_11"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
 
                 android:src="@drawable/orange_apple"
                 android:visibility="invisible"
@@ -229,7 +225,6 @@
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:scaleType="centerCrop"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
 
@@ -237,7 +232,6 @@
                 android:id="@+id/main_MAT_31"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:scaleType="centerCrop"
                 android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
@@ -246,7 +240,6 @@
                 android:id="@+id/main_MAT_41"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:scaleType="centerCrop"
                 android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
@@ -255,7 +248,6 @@
                 android:id="@+id/main_MAT_51"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:scaleType="centerCrop"
                 android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
@@ -264,7 +256,6 @@
                 android:id="@+id/main_MAT_61"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:scaleType="centerCrop"
                 android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
@@ -290,7 +281,6 @@
                 android:id="@+id/main_MAT_12"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:scaleType="centerCrop"
                 android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
@@ -299,7 +289,6 @@
                 android:id="@+id/main_MAT_22"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:scaleType="centerCrop"
 
                 android:src="@drawable/orange_apple"
@@ -309,7 +298,6 @@
                 android:id="@+id/main_MAT_32"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:scaleType="centerCrop"
                 android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
@@ -318,7 +306,6 @@
                 android:id="@+id/main_MAT_42"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:scaleType="centerCrop"
                 android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
@@ -327,7 +314,6 @@
                 android:id="@+id/main_MAT_52"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:scaleType="centerCrop"
                 android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
@@ -336,7 +322,6 @@
                 android:id="@+id/main_MAT_62"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:layout_marginTop="@dimen/negative_overlap_margin_logo_matrix"
                 android:scaleType="centerCrop"
                 android:src="@drawable/orange_apple"
                 android:visibility="invisible" />
