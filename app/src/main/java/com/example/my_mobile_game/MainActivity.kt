@@ -31,7 +31,22 @@ class MainActivity : AppCompatActivity() {
         findViews()
         gameManager = GameManager(main_IMG_hearts.size, main_IMG_apple[0].size, main_IMG_apple.size)
         initViews()
-        startGame()
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        if (!gameStarted && !gameManager.isGameOver) {
+            handler.postDelayed(runnable, Constants.GameLogic.DELAY)
+            gameStarted = true
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        handler.removeCallbacks(runnable)
+        // If you want the game to truly "stop" when paused, you might set:
+        gameStarted = false
     }
 
 
@@ -64,14 +79,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-    private fun startGame() {
-        if (!gameStarted) {
-            handler.postDelayed(runnable, Constants.GameLogic.DELAY)
-            gameStarted = true;
-
-        }
-    }
 
     private fun findViews() {
         main_FAB_rightarrow = findViewById(R.id.main_FAB_rightarrow)
