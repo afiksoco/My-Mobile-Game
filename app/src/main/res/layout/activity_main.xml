@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="@dimen/default_margin"
         android:textSize="@dimen/default_text_size"
         android:textStyle="bold"
@@ -128,7 +128,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="65dp"
         android:orientation="horizontal"
         android:visibility="visible"
 
