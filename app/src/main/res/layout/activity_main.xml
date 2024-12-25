@@ -86,7 +86,7 @@
 
     </com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton>
 
-    <!--    char -->
+    <!--char -->
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
@@ -109,11 +109,27 @@
             android:layout_height="@dimen/default_char_height"
             android:layout_weight="1"
             android:src="@drawable/tomco_photo"
-            android:visibility="visible" />
+            android:visibility="invisible" />
 
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_tomco3"
+            android:layout_width="@dimen/default_char_width"
+            android:layout_height="@dimen/default_char_height"
+            android:layout_weight="1"
+            android:src="@drawable/tomco_photo"
+            android:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_tomco4"
+            android:layout_width="@dimen/default_char_width"
+            android:layout_height="@dimen/default_char_height"
+            android:layout_weight="1"
+            android:src="@drawable/tomco_photo"
+            android:visibility="invisible" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_tomco5"
             android:layout_width="@dimen/default_char_width"
             android:layout_height="@dimen/default_char_height"
             android:layout_weight="1"
@@ -128,7 +144,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="125dp"
         android:orientation="horizontal"
         android:visibility="visible"
 
@@ -208,18 +224,18 @@
                 android:id="@+id/main_MAT_01"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
+                android:scaleType="centerCrop"
                 android:src="@drawable/orange_apple"
-                android:visibility="invisible"
-                android:scaleType="centerCrop"/>
+                android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_11"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
 
+                android:scaleType="centerCrop"
                 android:src="@drawable/orange_apple"
-                android:visibility="invisible"
-                android:scaleType="centerCrop"/>
+                android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_21"
@@ -321,6 +337,133 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_62"
+                android:layout_width="@dimen/apple_width"
+                android:layout_height="@dimen/apple_height"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
+                android:visibility="invisible" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--        fourth column -->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_MAT_03"
+                android:layout_width="@dimen/apple_width"
+                android:layout_height="@dimen/apple_height"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
+                android:visibility="invisible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_MAT_13"
+                android:layout_width="@dimen/apple_width"
+                android:layout_height="@dimen/apple_height"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
+                android:visibility="invisible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_MAT_23"
+                android:layout_width="@dimen/apple_width"
+                android:layout_height="@dimen/apple_height"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
+                android:visibility="invisible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_MAT_33"
+                android:layout_width="@dimen/apple_width"
+                android:layout_height="@dimen/apple_height"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
+                android:visibility="invisible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_MAT_43"
+                android:layout_width="@dimen/apple_width"
+                android:layout_height="@dimen/apple_height"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
+                android:visibility="invisible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_MAT_53"
+                android:layout_width="@dimen/apple_width"
+                android:layout_height="@dimen/apple_height"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
+                android:visibility="invisible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_MAT_63"
+                android:layout_width="@dimen/apple_width"
+                android:layout_height="@dimen/apple_height"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
+                android:visibility="invisible" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--        fifth column -->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_MAT_04"
+                android:layout_width="@dimen/apple_width"
+                android:layout_height="@dimen/apple_height"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
+                android:visibility="invisible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_MAT_14"
+                android:layout_width="@dimen/apple_width"
+                android:layout_height="@dimen/apple_height"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
+                android:visibility="invisible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_MAT_24"
+                android:layout_width="@dimen/apple_width"
+                android:layout_height="@dimen/apple_height"
+                android:scaleType="centerCrop"
+
+                android:src="@drawable/orange_apple"
+                android:visibility="invisible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_MAT_34"
+                android:layout_width="@dimen/apple_width"
+                android:layout_height="@dimen/apple_height"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
+                android:visibility="invisible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_MAT_44"
+                android:layout_width="@dimen/apple_width"
+                android:layout_height="@dimen/apple_height"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
+                android:visibility="invisible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_MAT_54"
+                android:layout_width="@dimen/apple_width"
+                android:layout_height="@dimen/apple_height"
+                android:scaleType="centerCrop"
+                android:src="@drawable/orange_apple"
+                android:visibility="invisible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_MAT_64"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
                 android:scaleType="centerCrop"

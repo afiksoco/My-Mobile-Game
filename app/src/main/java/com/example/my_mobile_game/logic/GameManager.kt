@@ -14,7 +14,6 @@ class GameManager(private val lifeCount: Int = 3, private val cols: Int, private
 
     var score: Int = 0
 
-
     var failureCount: Int = 0
         private set
 
@@ -69,7 +68,7 @@ class GameManager(private val lifeCount: Int = 3, private val cols: Int, private
 
 
     fun spawnApple() {
-        if (consecutiveSpawns < 2) { // Allow spawning only if less than 2 consecutive spawns
+        if (consecutiveSpawns < cols-1) { // Allow spawning only if less than 2 consecutive spawns
             val randomCol = Random.nextInt(cols) // Randomly pick a column index
             appleMatrix[0][randomCol] = true // Set the apple as visible in the top row
             consecutiveSpawns++ // Increment the counter for consecutive spawns

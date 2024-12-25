@@ -4,8 +4,10 @@ import com.google.android.material.color.utilities.Score
 
 class Constants {
     object GameLogic {
+        const val COLS = 5
+        const val ROWS = 7
         const val DELAY: Long = 700L
-        const val STARTING_POS: Int = 1
+        const val STARTING_POS: Int = COLS / 2
         const val POINTS_PER_SECOND: Int = 1
     }
 

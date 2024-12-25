@@ -94,47 +94,21 @@ class MainActivity : AppCompatActivity() {
         main_IMG_char = arrayOf(
             findViewById(R.id.main_IMG_tomco1),
             findViewById(R.id.main_IMG_tomco2),
-            findViewById(R.id.main_IMG_tomco3)
+            findViewById(R.id.main_IMG_tomco3),
+            findViewById(R.id.main_IMG_tomco4),
+            findViewById(R.id.main_IMG_tomco5)
         )
-        main_IMG_apple = arrayOf(
-            arrayOf(
-                findViewById(R.id.main_MAT_00),
-                findViewById(R.id.main_MAT_01),
-                findViewById(R.id.main_MAT_02)
-            ),
-            arrayOf(
-                findViewById(R.id.main_MAT_10),
-                findViewById(R.id.main_MAT_11),
-                findViewById(R.id.main_MAT_12)
-            ),
-            arrayOf(
-                findViewById(R.id.main_MAT_20),
-                findViewById(R.id.main_MAT_21),
-                findViewById(R.id.main_MAT_22)
-            ),
-            arrayOf(
-                findViewById(R.id.main_MAT_30),
-                findViewById(R.id.main_MAT_31),
-                findViewById(R.id.main_MAT_32)
-            ),
-            arrayOf(
-                findViewById(R.id.main_MAT_40),
-                findViewById(R.id.main_MAT_41),
-                findViewById(R.id.main_MAT_42)
-            ),
-            arrayOf(
-                findViewById(R.id.main_MAT_50),
-                findViewById(R.id.main_MAT_51),
-                findViewById(R.id.main_MAT_52)
-            ),
-            arrayOf(
-                findViewById(R.id.main_MAT_60),
-                findViewById(R.id.main_MAT_61),
-                findViewById(R.id.main_MAT_62)
-            ),
-
-            )
-
+        main_IMG_apple = Array(Constants.GameLogic.ROWS) { row ->
+            Array(Constants.GameLogic.COLS) { col ->
+                val resId = resources.getIdentifier(
+                    "main_MAT_${row}${col}", // Dynamic resource ID
+                    "id",
+                    packageName
+                )
+                findViewById<AppCompatImageView>(resId)
+            }
+        }
+        print("a")
     }
 
     private fun initViews() {
