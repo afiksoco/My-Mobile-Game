@@ -6,30 +6,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blood_red"
-    tools:context=".ScoreActivity">
+    tools:context=".WelcomeActivity">
 
     <!-- Material TextView -->
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/welcome_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:text="Welcome to the Game!"
         android:textColor="@color/black"
-        android:textSize="24sp"
-         />
+        android:textSize="24sp" />
 
-    <!-- Extended Floating Action Button -->
+    <!-- Tilt Button -->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/start_game_button"
+        android:id="@+id/welcome_BTN_tilt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Start Game"
-        app:backgroundTint="@color/sky_blue"
-      >
+        android:layout_below="@id/welcome_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="Tilt"
+        app:backgroundTint="@color/sky_blue" />
 
-    </com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/welcome_BTN_controls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcome_BTN_tilt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Controls"
+        app:backgroundTint="@color/sky_blue" />
+
+    <!-- Start Game Button (moved to bottom) -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/welcome_BTN_startgame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:text="Start Game"
+        app:backgroundTint="@color/sky_blue" />
 
 
 </RelativeLayout>

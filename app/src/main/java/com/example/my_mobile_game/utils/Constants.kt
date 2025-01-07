@@ -11,7 +11,13 @@ class Constants {
         const val POINTS_PER_SECOND: Int = 1
     }
 
+    object PlayModes {
+        const val TILT = "Tilt"
+        const val CONTROLS = "Controls"
+    }
+
     object BundleKeys {
         const val SCORE_KEY = "SCORE_KEY"
+        const val PLAY_MODE_KEY = "PLAY_MODE_KEY"
     }
 }

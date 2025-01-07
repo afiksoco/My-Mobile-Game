@@ -4,13 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
+import com.example.my_mobile_game.interfaces.TiltCallback
 import com.example.my_mobile_game.logic.GameManager
 import com.example.my_mobile_game.utils.Constants
+import com.example.my_mobile_game.utils.TiltDetector
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textview.MaterialTextView
 
@@ -24,21 +25,51 @@ class MainActivity : AppCompatActivity() {
     private lateinit var main_IMG_char: Array<AppCompatImageView>
     private lateinit var main_IMG_apple: Array<Array<AppCompatImageView>>
     private lateinit var main_LBL_score: MaterialTextView
-
+    private lateinit var tiltDetector: TiltDetector
+    private lateinit var playMode: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        playMode = intent.extras?.getString(Constants.BundleKeys.PLAY_MODE_KEY)!!
+
         findViews()
         gameManager = GameManager(main_IMG_hearts.size, main_IMG_apple[0].size, main_IMG_apple.size)
         initViews()
+        initTiltDetector()
     }
 
+
+    private fun initTiltDetector() {
+        tiltDetector = TiltDetector(
+            context = this,
+            tiltCallback = object : TiltCallback {
+
+                override fun tiltLeft() {
+                    gameManager.moveLeft()
+                    updateCharUI()
+                }
+
+                override fun tiltRight() {
+                    gameManager.moveRight()
+                    updateCharUI()
+                }
+
+                override fun tiltUp() {
+                }
+
+                override fun tiltDown() {
+                }
+
+            }
+        )
+    }
 
     override fun onResume() {
         super.onResume()
         if (!gameStarted && !gameManager.isGameOver) {
+            tiltDetector.start()
             handler.postDelayed(runnable, Constants.GameLogic.DELAY)
             gameStarted = true
         }
@@ -46,6 +77,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
+        tiltDetector.stop()
+
         handler.removeCallbacks(runnable)
         // If you want the game to truly "stop" when paused, you might set:
         gameStarted = false
@@ -108,22 +141,27 @@ class MainActivity : AppCompatActivity() {
                 findViewById<AppCompatImageView>(resId)
             }
         }
-        print("a")
     }
 
     private fun initViews() {
 
         main_LBL_score.text = "${gameManager.score}"
 
-        main_FAB_leftarrow.setOnClickListener {
-            gameManager.moveLeft()
-            updateCharUI()
-            updateHeartsUI()
-        }
-        main_FAB_rightarrow.setOnClickListener {
-            gameManager.moveRight()
-            updateCharUI()
-            updateHeartsUI()
+        if (playMode == Constants.PlayModes.CONTROLS) {
+            main_FAB_leftarrow.setOnClickListener {
+                gameManager.moveLeft()
+                updateCharUI()
+                updateHeartsUI()
+            }
+            main_FAB_rightarrow.setOnClickListener {
+                gameManager.moveRight()
+                updateCharUI()
+                updateHeartsUI()
+            }
+        } else {
+            main_FAB_leftarrow.visibility = View.INVISIBLE
+            main_FAB_rightarrow.visibility = View.INVISIBLE
+
         }
     }
 

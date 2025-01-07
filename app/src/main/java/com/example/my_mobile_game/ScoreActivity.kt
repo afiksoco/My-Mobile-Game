@@ -1,6 +1,7 @@
 package com.example.my_mobile_game
 
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.my_mobile_game.utils.Constants
 import com.google.android.material.textview.MaterialTextView
@@ -11,6 +12,7 @@ class ScoreActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_score)
 
         findViews()
@@ -18,7 +20,7 @@ class ScoreActivity : AppCompatActivity() {
     }
 
     private fun findViews() {
-        score_LBL_score = findViewById(R.id.score_LBL_score)
+        score_LBL_score = findViewById(R.id.score_FRAME_scores)//?????????!?!?!!?
     }
 
     private fun initViews() {

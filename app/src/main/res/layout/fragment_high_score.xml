@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple"
+    tools:context=".fragments.HighScoreFragment">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/highScore_ET_location"
+        style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_centerInParent="true"
+        android:hint="@string/hint"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/highScore_BTN_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send"
+        android:layout_below="@id/highScore_ET_location"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin"
+        />
+
+</RelativeLayout>
