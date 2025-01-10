@@ -1,10 +1,13 @@
 package com.example.my_mobile_game.logic
 
+import android.content.Context
+import com.example.my_mobile_game.R
 import com.example.my_mobile_game.utils.Constants
 import com.example.my_mobile_game.utils.SignalManager
+import com.example.my_mobile_game.utils.SingleSoundPlayer
 import kotlin.random.Random
 
-class GameManager(private val lifeCount: Int = 3, private val cols: Int, private val rows: Int) {
+class GameManager(private val context: Context, private val lifeCount: Int = 3, private val cols: Int, private val rows: Int) {
 
 
     private var currentCharPosition = Constants.GameLogic.STARTING_POS
@@ -84,9 +87,12 @@ class GameManager(private val lifeCount: Int = 3, private val cols: Int, private
     }
 
     fun handleCollision() {
+        var ssp: SingleSoundPlayer = SingleSoundPlayer(context)
+        ssp.playSound(R.raw.boom)
         failureCount++
         SignalManager.getInstance().toast("Tom met an apple user!")
         SignalManager.getInstance().vibrate()
+
     }
 
 

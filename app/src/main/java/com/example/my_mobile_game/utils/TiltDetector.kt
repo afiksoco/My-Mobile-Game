@@ -27,7 +27,6 @@ class TiltDetector(context: Context, private val tiltCallback: TiltCallback?) {
                 val y = event.values[1]
                 calculateTilt(x, y)
             }
-
             override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
                 // pass
             }

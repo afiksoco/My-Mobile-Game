@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple"
-    tools:context=".fragments.HighScoreFragment">
+    android:background="@color/ugly_purple"
+    >
+<!--    tools:context=".fragments.LeaderBoardFragment"-->
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/highScore_ET_location"
@@ -13,17 +14,17 @@
         android:layout_height="wrap_content"
         android:inputType="text"
         android:layout_centerInParent="true"
-        android:hint="@string/hint"
+        android:hint="hint"
         />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/highScore_BTN_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/send"
+        android:text="SEND"
         android:layout_below="@id/highScore_ET_location"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/margin"
+        android:layout_marginTop="5dp"
         />
 
 </RelativeLayout>

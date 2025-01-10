@@ -27,7 +27,7 @@
             android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".ScoreActivity"
+            android:name=".LeaderboardActivity"
             android:exported="true" />
 
     </application>

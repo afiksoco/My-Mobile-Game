@@ -6,14 +6,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.my_mobile_game.utils.Constants
 import com.google.android.material.textview.MaterialTextView
 
-class ScoreActivity : AppCompatActivity() {
+class LeaderboardActivity : AppCompatActivity() {
 
     private lateinit var score_LBL_score: MaterialTextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_score)
+        setContentView(R.layout.activity_leaderboard)
 
         findViews()
         initViews()

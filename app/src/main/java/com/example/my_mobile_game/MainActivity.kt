@@ -11,6 +11,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import com.example.my_mobile_game.interfaces.TiltCallback
 import com.example.my_mobile_game.logic.GameManager
 import com.example.my_mobile_game.utils.Constants
+import com.example.my_mobile_game.utils.SingleSoundPlayer
 import com.example.my_mobile_game.utils.TiltDetector
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textview.MaterialTextView
@@ -27,17 +28,22 @@ class MainActivity : AppCompatActivity() {
     private lateinit var main_LBL_score: MaterialTextView
     private lateinit var tiltDetector: TiltDetector
     private lateinit var playMode: String
+    private var difficulty: Long? = null
+    val handler: Handler = Handler(Looper.getMainLooper())
+    private var gameStarted: Boolean = false
+    private var gameOverHandled = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         playMode = intent.extras?.getString(Constants.BundleKeys.PLAY_MODE_KEY)!!
-
+        difficulty = intent.extras?.getLong(Constants.BundleKeys.DIFFICULTY_KEY)!!
         findViews()
-        gameManager = GameManager(main_IMG_hearts.size, main_IMG_apple[0].size, main_IMG_apple.size)
-        initViews()
+        gameManager =
+            GameManager(this, main_IMG_hearts.size, main_IMG_apple[0].size, main_IMG_apple.size)
         initTiltDetector()
+        initViews()
     }
 
 
@@ -69,15 +75,17 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         if (!gameStarted && !gameManager.isGameOver) {
-            tiltDetector.start()
-            handler.postDelayed(runnable, Constants.GameLogic.DELAY)
+            if (playMode == Constants.PlayModes.TILT)
+                tiltDetector.start()
+            handler.postDelayed(runnable, difficulty!!)
             gameStarted = true
         }
     }
 
     override fun onPause() {
         super.onPause()
-        tiltDetector.stop()
+        if (playMode == Constants.PlayModes.TILT)
+            tiltDetector.stop()
 
         handler.removeCallbacks(runnable)
         // If you want the game to truly "stop" when paused, you might set:
@@ -85,32 +93,29 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    val handler: Handler = Handler(Looper.getMainLooper())
-
-    private var gameStarted: Boolean = false
-
-    private var gameOverHandled = false
-
     val runnable: Runnable = object : Runnable {
         override fun run() {
-            //reschedule:
-            handler.postDelayed(this, Constants.GameLogic.DELAY)
-            //refresh UI:
-            if (gameManager.isGameOver) {
-                if (!gameOverHandled) {
-                    gameOverHandled = true // Ensure activity change happens only once
-                    changeActivity(gameManager.score)
-                }
-            } else {
-                gameManager.score += Constants.GameLogic.POINTS_PER_SECOND
-                updateScoreUI()
-                gameManager.moveLogosDown()
-                gameManager.spawnApple()
-                updateAppleUI()
-                if (gameManager.isCollision())
-                    gameManager.handleCollision()
-                updateHeartsUI()
+            handler.postDelayed(this, difficulty!!)
+            handleGameLogic()
+        }
+    }
+
+    private fun handleGameLogic() {
+        if (gameManager.isGameOver) {
+            if (!gameOverHandled) {
+                gameOverHandled = true // Ensure activity change happens only once
+                changeActivity(gameManager.score)
             }
+        } else {
+            gameManager.score += Constants.GameLogic.POINTS_PER_SECOND
+            updateScoreUI()
+            gameManager.moveLogosDown()
+            gameManager.spawnApple()
+            updateAppleUI()
+            if (gameManager.isCollision())
+                gameManager.handleCollision()
+
+            updateHeartsUI()
         }
     }
 
@@ -159,8 +164,9 @@ class MainActivity : AppCompatActivity() {
                 updateHeartsUI()
             }
         } else {
-            main_FAB_leftarrow.visibility = View.INVISIBLE
-            main_FAB_rightarrow.visibility = View.INVISIBLE
+            tiltDetector.stop()
+            main_FAB_leftarrow.visibility = View.GONE
+            main_FAB_rightarrow.visibility = View.GONE
 
         }
     }
@@ -194,7 +200,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun changeActivity(score: Int) {
-        val intent = Intent(this, ScoreActivity::class.java)
+        val intent = Intent(this, LeaderboardActivity::class.java)
         var bundle = Bundle()
         bundle.putInt(Constants.BundleKeys.SCORE_KEY, score)
         intent.putExtras(bundle)
