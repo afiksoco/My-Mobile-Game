@@ -1,30 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/ugly_purple"
-    >
-<!--    tools:context=".fragments.LeaderBoardFragment"-->
+    android:layout_height="match_parent">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/highScore_ET_location"
-        style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/leaderboard_RV_scores"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:layout_centerInParent="true"
-        android:hint="hint"
-        />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/highScore_BTN_send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SEND"
-        android:layout_below="@id/highScore_ET_location"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        />
+        android:layout_height="match_parent"
+        android:padding="16dp" />
 
 </RelativeLayout>

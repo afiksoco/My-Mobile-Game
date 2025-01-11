@@ -23,4 +23,8 @@ class Constants {
         const val EASY_MODE_DELAY: Long = 900L
         const val HARD_MODE_DELAY: Long = 500L
     }
+
+    object SPKeys{
+        const val SCORES_KEY = "SCORES_KEY"
+    }
 }

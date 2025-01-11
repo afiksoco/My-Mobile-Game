@@ -1,14 +1,26 @@
 package com.example.my_mobile_game
 
 import android.os.Bundle
+import android.widget.FrameLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.my_mobile_game.fragments.GoogleMapFragment
+import com.example.my_mobile_game.fragments.LeaderboardFragment
+import com.example.my_mobile_game.interfaces.HighScoreItemClickedCallback
 import com.example.my_mobile_game.utils.Constants
 import com.google.android.material.textview.MaterialTextView
 
 class LeaderboardActivity : AppCompatActivity() {
 
-    private lateinit var score_LBL_score: MaterialTextView
+    private lateinit var leaderboard_FRAME_scores: FrameLayout
+
+    private lateinit var leaderboard_FRAME_map: FrameLayout
+
+    private lateinit var mapFragment: GoogleMapFragment
+
+    private lateinit var leaderboardFragment: LeaderboardFragment
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,18 +32,30 @@ class LeaderboardActivity : AppCompatActivity() {
     }
 
     private fun findViews() {
-        score_LBL_score = findViewById(R.id.score_FRAME_scores)//?????????!?!?!!?
+
+        leaderboard_FRAME_scores = findViewById(R.id.leaderboard_FRAME_scores)
+
+        leaderboard_FRAME_map = findViewById(R.id.leaderboard_FRAME_map)
     }
 
     private fun initViews() {
-        val bundle: Bundle? = intent.extras
+        mapFragment = GoogleMapFragment()
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.leaderboard_FRAME_map, mapFragment)
+            .commit()
 
-        val score = bundle?.getInt(Constants.BundleKeys.SCORE_KEY, 0)
+        leaderboardFragment = LeaderboardFragment()
+//        leaderboardFragment.highScoreItemClicked = object : HighScoreItemClickedCallback {
+//            override fun highScoreItemClicked(lat: Double, lon: Double) {
+//                mapFragment.zoom(lat, lon)
+//            }
+//        }
 
-        score_LBL_score.text = buildString {
-            append("Game Over")
-            append("\n")
-            append(score)
-        }
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.leaderboard_FRAME_scores, leaderboardFragment)
+            .commit()
+
     }
 }

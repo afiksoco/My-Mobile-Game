@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <application
+
         android:name=".App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -29,7 +30,9 @@
         <activity
             android:name=".LeaderboardActivity"
             android:exported="true" />
-
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDGBA7HcU-Q8_UdgE7GTmLHl1pTbEvVcIA" />
     </application>
 
 </manifest>

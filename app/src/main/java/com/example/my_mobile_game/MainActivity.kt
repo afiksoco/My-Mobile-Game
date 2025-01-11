@@ -1,5 +1,6 @@
 package com.example.my_mobile_game
 
+import Score
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -10,8 +11,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import com.example.my_mobile_game.interfaces.TiltCallback
 import com.example.my_mobile_game.logic.GameManager
+import com.example.my_mobile_game.utils.BackgroundMusicPlayer
 import com.example.my_mobile_game.utils.Constants
-import com.example.my_mobile_game.utils.SingleSoundPlayer
+import com.example.my_mobile_game.utils.SharedPreferencesManager
 import com.example.my_mobile_game.utils.TiltDetector
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textview.MaterialTextView
@@ -74,6 +76,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        BackgroundMusicPlayer.getInstance().playMusic()
         if (!gameStarted && !gameManager.isGameOver) {
             if (playMode == Constants.PlayModes.TILT)
                 tiltDetector.start()
@@ -84,11 +87,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
+        BackgroundMusicPlayer.getInstance().stopMusic()
         if (playMode == Constants.PlayModes.TILT)
             tiltDetector.stop()
 
         handler.removeCallbacks(runnable)
-        // If you want the game to truly "stop" when paused, you might set:
         gameStarted = false
     }
 
@@ -200,12 +203,20 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun changeActivity(score: Int) {
+
+        savePlayerRecord("Afik", score)
         val intent = Intent(this, LeaderboardActivity::class.java)
         var bundle = Bundle()
         bundle.putInt(Constants.BundleKeys.SCORE_KEY, score)
         intent.putExtras(bundle)
         startActivity(intent)
         finish()
+    }
+
+    private fun savePlayerRecord(playerName: String, score: Int) {
+        val sharedPreferencesManager = SharedPreferencesManager.getInstance()
+//        val playerLocation = getPlayerLocation()
+        sharedPreferencesManager.addScore(Score(playerName, score, 8, 5))
     }
 
 }

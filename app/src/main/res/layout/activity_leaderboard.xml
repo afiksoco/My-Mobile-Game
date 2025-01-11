@@ -10,14 +10,14 @@
 
 
     <FrameLayout
-        android:id="@+id/score_FRAME_scores"
+        android:id="@+id/leaderboard_FRAME_scores"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@color/sky_blue" />
 
     <FrameLayout
-        android:id="@+id/score_FRAME_map"
+        android:id="@+id/leaderboard_FRAME_map"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
