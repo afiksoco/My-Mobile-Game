@@ -1,6 +1,7 @@
 package com.example.my_mobile_game.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import com.example.my_mobile_game.R
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -31,6 +32,7 @@ class GoogleMapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback {
     }
 
     fun zoom(lat: Double, lon: Double) {
+        Log.d("aaa","asdasdsa")
         val location = LatLng(lat, lon)
         googleMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 12f))
         googleMap?.addMarker(MarkerOptions().position(location).title("Selected Score"))

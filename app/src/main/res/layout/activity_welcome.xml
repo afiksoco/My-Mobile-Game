@@ -107,6 +107,21 @@
         app:backgroundTint="@color/blood_red"
         app:cornerRadius="50dp" />
 
+    <!--Leaderboard button -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/welcome_BTN_leaderboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcome_BTN_hard"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="🏆"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:backgroundTint="@color/ugly_purple"
+        app:cornerRadius="50dp" />
+
     <!-- Start Game Button -->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/welcome_BTN_startgame"

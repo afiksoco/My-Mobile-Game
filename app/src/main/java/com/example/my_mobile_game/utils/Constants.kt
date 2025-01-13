@@ -27,4 +27,8 @@ class Constants {
     object SPKeys{
         const val SCORES_KEY = "SCORES_KEY"
     }
+
+    object RequestCodes {
+        const val LOCATION_PERMISSION_REQUEST_CODE = 1001
+    }
 }

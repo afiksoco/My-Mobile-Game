@@ -1,22 +1,31 @@
 package com.example.my_mobile_game
 
 import Score
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresPermission
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.app.ActivityCompat
 import com.example.my_mobile_game.interfaces.TiltCallback
 import com.example.my_mobile_game.logic.GameManager
 import com.example.my_mobile_game.utils.BackgroundMusicPlayer
 import com.example.my_mobile_game.utils.Constants
 import com.example.my_mobile_game.utils.SharedPreferencesManager
 import com.example.my_mobile_game.utils.TiltDetector
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.maps.model.LatLng
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textview.MaterialTextView
+import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlin.coroutines.resume
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,11 +43,14 @@ class MainActivity : AppCompatActivity() {
     val handler: Handler = Handler(Looper.getMainLooper())
     private var gameStarted: Boolean = false
     private var gameOverHandled = false
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
         playMode = intent.extras?.getString(Constants.BundleKeys.PLAY_MODE_KEY)!!
         difficulty = intent.extras?.getLong(Constants.BundleKeys.DIFFICULTY_KEY)!!
         findViews()
@@ -214,9 +226,37 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun savePlayerRecord(playerName: String, score: Int) {
-        val sharedPreferencesManager = SharedPreferencesManager.getInstance()
-//        val playerLocation = getPlayerLocation()
-        sharedPreferencesManager.addScore(Score(playerName, score, 8, 5))
+        getPlayerLocation { playerLocation ->
+            val sharedPreferencesManager = SharedPreferencesManager.getInstance()
+            sharedPreferencesManager.addScore(
+                Score(playerName, score, playerLocation.latitude, playerLocation.longitude)
+            )
+        }
     }
+
+
+    private fun getPlayerLocation(callback: (LatLng) -> Unit) {
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            // If permission is not granted, return a default location
+            callback(LatLng(0.0, 0.0))
+        } else {
+            fusedLocationClient.lastLocation.addOnSuccessListener { loc ->
+                if (loc != null) {
+                    callback(LatLng(loc.latitude, loc.longitude))
+                } else {
+                    // If location is null, return a default location
+                    callback(LatLng(0.0, 0.0))
+                }
+            }.addOnFailureListener {
+                // Handle failure (e.g., return default location)
+                callback(LatLng(0.0, 0.0))
+            }
+        }
+    }
+
 
 }

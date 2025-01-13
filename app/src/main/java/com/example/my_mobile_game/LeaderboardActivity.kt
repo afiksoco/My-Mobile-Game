@@ -1,6 +1,7 @@
 package com.example.my_mobile_game
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.FrameLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +11,7 @@ import com.example.my_mobile_game.interfaces.HighScoreItemClickedCallback
 import com.example.my_mobile_game.utils.Constants
 import com.google.android.material.textview.MaterialTextView
 
-class LeaderboardActivity : AppCompatActivity() {
+class LeaderboardActivity : AppCompatActivity(), HighScoreItemClickedCallback {
 
     private lateinit var leaderboard_FRAME_scores: FrameLayout
 
@@ -46,16 +47,17 @@ class LeaderboardActivity : AppCompatActivity() {
             .commit()
 
         leaderboardFragment = LeaderboardFragment()
-//        leaderboardFragment.highScoreItemClicked = object : HighScoreItemClickedCallback {
-//            override fun highScoreItemClicked(lat: Double, lon: Double) {
-//                mapFragment.zoom(lat, lon)
-//            }
-//        }
+        leaderboardFragment.setItemClickListener(this)
+
 
         supportFragmentManager
             .beginTransaction()
             .add(R.id.leaderboard_FRAME_scores, leaderboardFragment)
             .commit()
 
+    }
+
+    override fun highScoreItemClicked(lat: Double, lon: Double) {
+        mapFragment.zoom(lat,lon)
     }
 }
