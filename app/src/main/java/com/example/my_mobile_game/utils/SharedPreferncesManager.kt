@@ -47,6 +47,12 @@ class SharedPreferencesManager private constructor(context: Context) {
             .apply()
     }
 
+    fun clearRecords() {
+        sharedPreferences.edit()
+            .remove(Constants.SPKeys.SCORES_KEY)
+            .apply()
+    }
+
     fun getScores(key: String): List<Score> {
         val json = sharedPreferences.getString(key, null)
         return if (json != null) {
