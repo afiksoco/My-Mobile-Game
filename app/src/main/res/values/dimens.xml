@@ -13,4 +13,6 @@
     <dimen name="char_default_margin">80dp</dimen>
     <dimen name="default_char_width">80dp</dimen>
     <dimen name="default_char_height">100dp</dimen>
+    <dimen name="default_welcome_margin">50dp</dimen>
+    <dimen name="default_buttons_width">140dp</dimen>
 </resources>

@@ -41,7 +41,7 @@ class GoogleMapFragment : Fragment(R.layout.fragment_map) {
             return
         }
 
-        val location = LatLng(32.1, 32.2)
+        val location = LatLng(32.115258, 34.817827)
         googleMap.clear()
         googleMap.addMarker(MarkerOptions().position(location).title("Player Location"))
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15f))

@@ -122,14 +122,14 @@ class MainActivity : AppCompatActivity() {
                 changeActivity(gameManager.score)
             }
         } else {
-            gameManager.score += Constants.GameLogic.POINTS_PER_SECOND
             updateScoreUI()
             gameManager.moveLogosDown()
             gameManager.spawnApple()
-            updateAppleUI()
+            updateMatrixUI()
             if (gameManager.isCollision())
                 gameManager.handleCollision()
-
+            if (gameManager.isPrize())
+                gameManager.score += Constants.GameLogic.POINTS_PER_ANDROID
             updateHeartsUI()
         }
     }
@@ -193,11 +193,17 @@ class MainActivity : AppCompatActivity() {
         main_IMG_char[gameManager.getCurrentPosition()].visibility = View.VISIBLE
     }
 
-    private fun updateAppleUI() {
+    private fun updateMatrixUI() {
         for (i in main_IMG_apple.indices) {
             for (j in main_IMG_apple[i].indices) {
-                main_IMG_apple[i][j].visibility =
-                    if (gameManager.isAppleVisible(i, j)) View.VISIBLE else View.INVISIBLE
+                main_IMG_apple[i][j].apply {
+                    when (gameManager.getCellState(i, j)) {
+                        Constants.Images.APPLE -> setImageResource(R.drawable.orange_apple)
+                        Constants.Images.ANDROID -> setImageResource(R.drawable.icons8_android)
+                        else -> setImageResource(0)
+                    }
+                }
+
             }
         }
     }

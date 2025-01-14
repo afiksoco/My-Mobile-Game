@@ -160,57 +160,43 @@
                 android:id="@+id/main_MAT_00"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_10"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_20"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_30"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_40"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_50"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_60"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -224,58 +210,44 @@
                 android:id="@+id/main_MAT_01"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_11"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
 
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_21"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_31"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_41"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_51"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_61"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -290,17 +262,13 @@
                 android:id="@+id/main_MAT_02"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_12"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_22"
@@ -308,40 +276,31 @@
                 android:layout_height="@dimen/apple_height"
                 android:scaleType="centerCrop"
 
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_32"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_42"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_52"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_62"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <!--        fourth column -->
@@ -354,57 +313,43 @@
                 android:id="@+id/main_MAT_03"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_13"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_23"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_33"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_43"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_53"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_63"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <!--        fifth column -->
@@ -417,17 +362,13 @@
                 android:id="@+id/main_MAT_04"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_14"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_24"
@@ -435,40 +376,31 @@
                 android:layout_height="@dimen/apple_height"
                 android:scaleType="centerCrop"
 
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_34"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_44"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_54"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_MAT_64"
                 android:layout_width="@dimen/apple_width"
                 android:layout_height="@dimen/apple_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange_apple"
-                android:visibility="invisible" />
+                android:scaleType="centerCrop" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>

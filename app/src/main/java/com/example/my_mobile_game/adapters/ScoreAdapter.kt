@@ -26,8 +26,7 @@ class ScoreAdapter(private val scores: List<Score>) :
         val score = scores[position]
         holder.nameTextView.text = score.name
         holder.scoreTextView.text = score.score.toString()
-        holder.lanTextView.text = score.lan.toString()
-        holder.lonTextView.text = score.lon.toString()
+
 
 
         holder.itemView.setOnClickListener {
@@ -41,8 +40,7 @@ class ScoreAdapter(private val scores: List<Score>) :
     class ScoreViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val nameTextView: TextView = view.findViewById(R.id.item_score_name)
         val scoreTextView: TextView = view.findViewById(R.id.item_score_value)
-        val lanTextView: TextView = view.findViewById(R.id.item_score_lan)
-        val lonTextView: TextView = view.findViewById(R.id.item_score_lon)
+
 
 
     }

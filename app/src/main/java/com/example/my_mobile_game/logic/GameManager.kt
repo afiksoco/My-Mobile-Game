@@ -7,11 +7,16 @@ import com.example.my_mobile_game.utils.SignalManager
 import com.example.my_mobile_game.utils.SingleSoundPlayer
 import kotlin.random.Random
 
-class GameManager(private val context: Context, private val lifeCount: Int = 3, private val cols: Int, private val rows: Int) {
+class GameManager(
+    private val context: Context,
+    private val lifeCount: Int = 3,
+    private val cols: Int,
+    private val rows: Int
+) {
 
 
     private var currentCharPosition = Constants.GameLogic.STARTING_POS
-    private val appleMatrix: Array<Array<Boolean>> = Array(rows) { Array(cols) { false } }
+    private val appleMatrix: Array<Array<Int>> = Array(rows) { Array(cols) { 0 } }
 
     var consecutiveSpawns = 0 // Tracks consecutive apple spawns
 
@@ -29,6 +34,9 @@ class GameManager(private val context: Context, private val lifeCount: Int = 3, 
             if (isCollision()) {
                 handleCollision()
             }
+            if (isPrize()) {
+                score += Constants.GameLogic.POINTS_PER_ANDROID
+            }
         }
     }
 
@@ -37,6 +45,10 @@ class GameManager(private val context: Context, private val lifeCount: Int = 3, 
             currentCharPosition++
             if (isCollision()) {
                 handleCollision()
+            }
+            if (isPrize()) {
+                score += Constants.GameLogic.POINTS_PER_ANDROID
+
             }
         }
     }
@@ -47,10 +59,12 @@ class GameManager(private val context: Context, private val lifeCount: Int = 3, 
 
 
     // Returns the current visibility state of the apple at a specific position
-    fun isAppleVisible(row: Int, col: Int): Boolean {
+//    fun isAppleVisible(row: Int, col: Int): Boolean {
+//        return appleMatrix[row][col]
+//    }
+    fun getCellState(row: Int, col: Int): Int {
         return appleMatrix[row][col]
     }
-
 
     // Logic to move the logos down by one row
     fun moveLogosDown() {
@@ -64,16 +78,17 @@ class GameManager(private val context: Context, private val lifeCount: Int = 3, 
 
 //         Clear the first row (set all to invisible)
         for (j in 0 until cols) {
-            appleMatrix[0][j] = false
+            appleMatrix[0][j] = 0
         }
     }
 
 
-
     fun spawnApple() {
-        if (consecutiveSpawns < cols-1) { // Allow spawning only if less than 2 consecutive spawns
+        if (consecutiveSpawns < cols - 1) { // Allow spawning only if less than 2 consecutive spawns
             val randomCol = Random.nextInt(cols) // Randomly pick a column index
-            appleMatrix[0][randomCol] = true // Set the apple as visible in the top row
+            val imageInt = if (Random.nextInt(100) < Constants.GameLogic.ANDROID_SPAWN_CHANCE)
+                Constants.Images.ANDROID else Constants.Images.APPLE       // Set the apple as visible in the top row
+            appleMatrix[0][randomCol] = imageInt
             consecutiveSpawns++ // Increment the counter for consecutive spawns
         } else {
             // Skip spawning and reset the counter
@@ -83,7 +98,11 @@ class GameManager(private val context: Context, private val lifeCount: Int = 3, 
 
 
     fun isCollision(): Boolean {
-        return appleMatrix[appleMatrix.size - 1][currentCharPosition]
+        return appleMatrix[appleMatrix.size - 1][currentCharPosition] == 1
+    }
+
+    fun isPrize(): Boolean {
+        return appleMatrix[appleMatrix.size - 1][currentCharPosition] == 2
     }
 
     fun handleCollision() {

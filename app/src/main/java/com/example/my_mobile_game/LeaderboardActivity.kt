@@ -1,15 +1,13 @@
 package com.example.my_mobile_game
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.FrameLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.my_mobile_game.fragments.GoogleMapFragment
 import com.example.my_mobile_game.fragments.LeaderboardFragment
 import com.example.my_mobile_game.interfaces.HighScoreItemClickedCallback
-import com.example.my_mobile_game.utils.Constants
-import com.google.android.material.textview.MaterialTextView
+
 
 class LeaderboardActivity : AppCompatActivity(), HighScoreItemClickedCallback {
 

@@ -16,7 +16,6 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 class WelcomeActivity : AppCompatActivity() {
 
 
-    private lateinit var binding: ActivityWelcomeBinding
     private lateinit var welcome_BTN_leaderboard: ExtendedFloatingActionButton
     private lateinit var welcome_BTN_startgame: ExtendedFloatingActionButton
     private lateinit var welcome_BTN_tilt: ExtendedFloatingActionButton
@@ -84,7 +83,7 @@ class WelcomeActivity : AppCompatActivity() {
             highlightButton(welcome_BTN_hard, welcome_BTN_easy) // Highlight selected button
         }
         welcome_BTN_startgame.setOnClickListener {
-            if (selectedMode != null) {
+            if (selectedMode != null && difficulty != null) {
                 changeActivity(
                     MainActivity::class.java,
                     mapOf(
@@ -94,7 +93,7 @@ class WelcomeActivity : AppCompatActivity() {
                 )
             } else {
                 // Show a message if no mode is selected
-                Toast.makeText(this, "Please select a play mode.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please select difficulty and play mode", Toast.LENGTH_SHORT).show()
             }
         }
     }

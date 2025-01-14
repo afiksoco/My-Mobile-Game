@@ -6,36 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".WelcomeActivity">
 
-    <!-- Welcome Text -->
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/welcome_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:text="Welcome to the Game!"
-        android:textColor="@color/white"
-        android:textSize="28sp"
-        android:textStyle="bold"
-         />
+
 
     <!-- Game Mode Header -->
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/game_mode_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/welcome_text"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="@dimen/default_welcome_margin"
         android:text="Select Game Mode"
-        android:textColor="@color/yellow"
+        android:textColor="@color/orange"
         android:textSize="22sp"
+
         />
 
     <!-- Tilt Button -->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/welcome_BTN_tilt"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/default_buttons_width"
         android:layout_height="wrap_content"
         android:layout_below="@id/game_mode_header"
         android:layout_centerHorizontal="true"
@@ -50,7 +39,7 @@
     <!-- Controls Button -->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/welcome_BTN_controls"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/default_buttons_width"
         android:layout_height="wrap_content"
         android:layout_below="@id/welcome_BTN_tilt"
         android:layout_centerHorizontal="true"
@@ -71,14 +60,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:text="Select Difficulty"
-        android:textColor="@color/yellow"
+        android:textColor="@color/orange"
         android:textSize="22sp"
         />
 
     <!-- Easy Difficulty Button -->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/welcome_BTN_easy"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/default_buttons_width"
         android:layout_height="wrap_content"
         android:layout_below="@id/game_difficulty_header"
         android:layout_centerHorizontal="true"
@@ -95,7 +84,7 @@
     <!-- Hard Difficulty Button -->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/welcome_BTN_hard"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/default_buttons_width"
         android:layout_height="wrap_content"
         android:layout_below="@id/welcome_BTN_easy"
         android:layout_centerHorizontal="true"
@@ -104,17 +93,17 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:backgroundTint="@color/blood_red"
+        app:backgroundTint="@color/sky_blue"
         app:cornerRadius="50dp" />
 
     <!--Leaderboard button -->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/welcome_BTN_leaderboard"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/default_buttons_width"
         android:layout_height="wrap_content"
-        android:layout_below="@id/welcome_BTN_hard"
+        android:layout_above="@id/welcome_BTN_startgame"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:text="🏆"
         android:textStyle="bold"
         android:textColor="@color/white"
@@ -129,7 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="@dimen/default_welcome_margin"
         android:text="🚀 Start Game"
         android:textStyle="bold"
         android:textColor="@color/white"
